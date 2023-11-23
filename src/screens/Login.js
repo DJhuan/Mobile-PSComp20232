@@ -1,9 +1,11 @@
 import { Text, TextInput, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { ROUTES, STYLES } from "../assets/constants";
+import { useNavigation } from "@react-navigation/native";
 
 const Login = (props) => {
-  const { navigation } = props;
+  const navigation = useNavigation();
+
   return (
     <View style={STYLES.sContainer}>
       {/* Login, senha e botão de envio */}
@@ -20,7 +22,10 @@ const Login = (props) => {
         secureTextEntry={true}
       />
 
-      <TouchableOpacity style={[STYLES.loginButton, { margin: 5 }]}>
+      <TouchableOpacity
+        style={[STYLES.loginButton, { margin: 5 }]}
+        onPress={() => navigation.navigate(ROUTES.HOME)}
+      >
         <Text style={[STYLES.bold]}>Sign up</Text>
       </TouchableOpacity>
 
