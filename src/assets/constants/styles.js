@@ -41,6 +41,14 @@ const STYLES = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
+  ultraBold: {
+    fontSize: 24,
+    fontWeight: "900",
+  },
+  ligth: {
+    fontSize: 14,
+    fontWeight: "100",
+  },
 });
 
 export default STYLES;
