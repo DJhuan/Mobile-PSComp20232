@@ -1,24 +1,40 @@
 import React from "react";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
+import { createStackNavigator } from "@react-navigation/stack";
+import colors from "../assets/constants/colors";
 
 import { ROUTES } from "../assets/constants";
-import { Memories, Calendar } from "../screens";
+import { Memories, Calendar } from "../routes";
 
-const Tab = createMaterialTopTabNavigator();
+const Stack = createStackNavigator();
 
 function HomeNavigator() {
-  const insets = useSafeAreaInsets();
-
   return (
-    <Tab.Navigator style={{ paddingTop: insets.top }}>
-      <Tab.Screen name={ROUTES.MEMORIES} component={Memories} />
-      <Tab.Screen name={ROUTES.CALENDAR} component={Calendar} />
-    </Tab.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerTintColor: colors.ligth,
+        headerStyle: {
+          backgroundColor: colors.header,
+        },
+        transitionSpec: { open: ANIMATIONS, close: ANIMATIONS },
+      }}
+      initialRouteName={ROUTES.MEMORIES}
+    >
+      <Stack.Screen name={ROUTES.MEMORIES} component={Memories} />
+      <Stack.Screen name={ROUTES.CALENDAR} component={Calendar} />
+    </Stack.Navigator>
   );
 }
+
+const ANIMATIONS = {
+  animation: "spring",
+  config: {
+    stiffness: 800,
+    damping: 500,
+    mass: 5,
+    overshootClamping: true,
+    restDisplacementThreshold: 1,
+    restSpeedThreshold: 1,
+  },
+};
 
 export default HomeNavigator;

@@ -6,4 +6,6 @@ export default {
   primary: "#C08552",
   ligth: "#DAB49D",
   black: "#0A0A09",
+  redError: "#B1081B",
+  fadeOut: "#7777",
 };

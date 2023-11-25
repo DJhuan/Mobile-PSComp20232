@@ -17,13 +17,12 @@ const STYLES = StyleSheet.create({
 
   // Estilos da tela de login
   loginInput: {
-    height: 40,
+    height: 50,
     width: 350,
     borderWidth: 1,
     padding: 10,
     backgroundColor: COLORS.ligth,
     borderColor: COLORS.primary,
-    borderRadius: 100,
   },
 
   loginButton: {
@@ -34,6 +33,22 @@ const STYLES = StyleSheet.create({
     padding: 10,
     borderRadius: 100,
     backgroundColor: COLORS.button,
+  },
+
+  loginErrorBox: {
+    justifyContent: "flex-start",
+    alignItems: "center",
+    width: 300,
+    borderRadius: 100,
+    backgroundColor: COLORS.ligth,
+  },
+
+  calendar: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: COLORS.ligth,
+    borderRadius: 20,
+    borderWidth: 5,
   },
 
   // Fontes
@@ -47,7 +62,8 @@ const STYLES = StyleSheet.create({
   },
   ligth: {
     fontSize: 14,
-    fontWeight: "100",
+    fontWeight: "300",
+    color: COLORS.black,
   },
 });
 
